@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+    <head>
+       <title> Registration Page </title>
+       <script>
+      function validate()
+      {
+         var username=document.getElementById("uname");
+         var password=document.getElementById("pass");
+         var firstname=document.getElementById("fname");
+         var lastname=document.getElementById("lname");
+         var address=document.getElementById("add");
+         var postalcode=document.getElementById("pcode");
+         var phone=document.getElementById("phn");
+         var letters=/^[a-zA-Z ]*$/;
+         var numletters=/^[A-Za-z0-9]*$/;
+
+         if(username.value.trim()=="")
+         { 
+         alert("Enter the username")
+         return false;
+         }
+         else if(!username.value.match(letters))
+         {
+            alert("Username should have letters only")
+            return false;
+         }
+         else if(password.value.trim()=="")
+         { 
+         alert("Enter the password")
+         return false;
+         }
+         else if(!password.value.match(numletters))
+         {
+            alert("password should have letters and numbers only")
+            return false;
+         }
+         else if(firstname.value.trim()=="")
+         { 
+         alert("Enter the firstname")
+         return false;
+         }
+         else if(!firstname.value.match(letters))
+         {
+            alert("Firstname should have letters only")
+            return false;
+         }
+         else if(lastname.value.trim()=="")
+         { 
+         alert("Enter the lastname")
+         return false;
+         }
+         else if(!lastname.value.match(letters))
+         {
+            alert("Lastname should have letters only")
+            return false;
+         }
+         else if(address.value.trim()=="")
+         { 
+         alert("Enter the Address")
+         return false;
+         }
+         else if(postalcode.value.trim()=="")
+         { 
+         alert("Enter the Postal Code")
+         return false;
+         }
+         else if(phone.value.trim()=="")
+         { 
+         alert("Enter the phone number")
+         return false;
+         }       
+         else
+         {
+         true;
+         }
+      }
+       </script>
+    </head>
+    <style> 
+      div{
+         background-color: lightskyblue;
+         width: 400px;
+         border: 10px black;
+         padding: 50px;
+         margin: 20px;
+         }
+    </style>
+       <body>
+       <center> 
+         <div>  
+               <b> Registration Form: </b> <br> <br>
+               <form onsubmit="return validate()"
+               action = "Display.html">
+               <label for="uname"> Username : </label>
+         		<input type="text" id="uname" placeholder="Username"size="30"/> <br><br>
+         		<label for="pass"> Password : </label>
+         		<input type="password" id="pass" placeholder="Password"size="30"/> <br><br>
+         		<label for="fname"> Firstname : </label>
+         		<input type="text" id="fname" placeholder="Firstname"size="30"/> <br><br>
+         		<label for="lname"> Lastname : </label>
+         		<input type="text" id="lname" placeholder="Lastname"size="30"/> <br><br>
+         		<label for="Dob"> Date Of Birth : </label>
+         		<input type="Date" id="Dob" /> <br><br>
+         		<label for="add"> Address : </label><br>
+         		<textarea cols="40" rows="3" id="add"> </textarea> <br><br>
+         		<label for="pcode"> Postal code : </label>
+         		<input type="number" id="pcode" placeholder="PostalCode"/> <br><br>
+         		<label for="phn"> Phone : </label>
+         		<input type="text"id="Ccode" name="CountryCode" value="+91" size="2" /> 
+         		<input type="number" id="phn" name="phoneNo" size="10" /><br><br>
+         		<button type="submit" style="background-color:black;color:white"> Submit </button>
+               </form>
+         </div>
+        </center>
+       </body>
+</html>
